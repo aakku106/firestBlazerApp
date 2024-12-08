@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/aakku/Documents/blazor/first/obj/Debug/net8.0/scopedcss/projectbundle/first.bundle.scp.css",
+      "PackagePath": "staticwebassets/first.bundle.scp.css"
+    },
+    {
+      "Id": "/Users/aakku/Documents/blazor/first/wwwroot/app.css",
+      "PackagePath": "staticwebassets/app.css"
+    },
+    {
+      "Id": "/Users/aakku/Documents/blazor/first/wwwroot/bootstrap/bootstrap.min.css",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/aakku/Documents/blazor/first/wwwroot/bootstrap/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/bootstrap/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/aakku/Documents/blazor/first/wwwroot/favicon.png",
+      "PackagePath": "staticwebassets/favicon.png"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.first.props",
+      "PackagePath": "build\\first.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.first.props",
+      "PackagePath": "buildMultiTargeting\\first.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.first.props",
+      "PackagePath": "buildTransitive\\first.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.first.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
