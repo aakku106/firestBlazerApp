@@ -1,0 +1,848 @@
+@page "/Tictak"
+@rendermode InteractiveServer
+
+<style>
+    body {
+        background-color:
+    @bGc
+        ;
+        transition: all 1s ease-in-out;
+    }
+
+    .tik {
+        width: 10vw;
+        height: 10vw;
+        background-color: white;
+        border: 10px solid #660d0d;
+        border-radius: .5vw;
+        border-top-left-radius: 5vw;
+        border-bottom-right-radius: 5vw;
+        text-align: center;
+        padding-top: 2vw;
+        font-size: xxx-large;
+        font-weight: 900;
+        transition: padding 1s ease-in-out, width 3s ease-in-out, height 3s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #bdb2b2;
+            color: #bef59698;
+            width: 10.1vw;
+            height: 10.1vw;
+            padding-right: 5vw;
+            padding-left: 3vw;
+            padding-top: 2vw;
+            padding-bottom: 5vw;
+            transition: padding 1s ease-in-out, width .5s ease-in-out, height .5s ease-in-out;
+        }
+
+        &:active {
+            background-color: #c1d4c9;
+            color: #ff00d0;
+        }
+    }
+
+    .one,
+    .two,
+    .three {
+        display: flex !important;
+    }
+</style>
+
+<div class="ccn m-5 p-5">
+    <span class="one ">
+
+        <span class="tik " @onclick="play1"> @sPlay1</span>
+        <span class="tik " @onclick="play2">@sPlay2</span>
+        <span class="tik " @onclick="play3"> @sPlay3</span>
+    </span>
+
+    <span class="two ">
+        <span class="tik " @onclick="play4"> @sPlay4</span>
+        <span class="tik " @onclick="play5">@sPlay5</span>
+        <span class="tik " @onclick="play6"> @sPlay6</span>
+    </span>
+    <span class="three ">
+        <span class="tik " @onclick="play7"> @sPlay7</span>
+        <span class="tik " @onclick="play8">@sPlay8</span>
+        <span class="tik " @onclick="play9"> @sPlay9</span>
+    </span>
+</div>
+<button class=" btn-warning p-2  container" @onclick="bChanger"> @turn </button>
+@code {
+    private string bGc = "wheat";
+    private string turn = "Start";
+    int counter = 0;
+    int clickCounter = 0;
+    private string sPlay1 = " ";
+    private string sPlay2 = " ";
+    private string sPlay3 = " ";
+    private string sPlay4 = " ";
+    private string sPlay5 = " ";
+    private string sPlay6 = " ";
+    private string sPlay7 = " ";
+    private string sPlay8 = " ";
+    private string sPlay9 = " ";
+    int one = 0;
+    int two = 0;
+    int three = 0;
+    int four = 0;
+    int five = 0;
+    int six = 0;
+    int seven = 0;
+    int eight = 0;
+    int nine = 0;
+    int sCounter = 0;
+    private void play1()
+    {
+        if (one == 0)
+        {
+            if (clickCounter == 1 || sPlay1 == "X")
+            {
+                sPlay1 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 2 || sPlay1 == "O")
+            {
+                sPlay1 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 3 || sPlay1 == "O")
+            {
+                sPlay1 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 4 || sPlay1 == "O")
+            {
+                sPlay1 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 5 || sPlay1 == "O")
+            {
+                sPlay1 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 6 || sPlay1 == "O")
+            {
+                sPlay1 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 7 || sPlay1 == "O")
+            {
+                sPlay1 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 8 || sPlay1 == "O")
+            {
+                sPlay1 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 9 || sPlay1 == "O")
+            {
+                sPlay1 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+        }
+    }
+    private void play2()
+    {
+        if (two == 0)
+        {
+            if (clickCounter == 1 || sPlay2 == "X")
+            {
+                sPlay2 = "O";
+                two = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 2 || sPlay2 == "O")
+            {
+                sPlay2 = "X";
+                two = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 3 || sPlay2 == "X")
+            {
+                sPlay2 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 4 || sPlay2 == "O")
+            {
+                sPlay2 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 5 || sPlay2 == "X")
+            {
+                sPlay2 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 6 || sPlay2 == "O")
+            {
+                sPlay2 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 7 || sPlay2 == "X")
+            {
+                sPlay2 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 8 || sPlay2 == "O")
+            {
+                sPlay2 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 9 || sPlay2 == "X")
+            {
+                sPlay2 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+        }
+    }
+
+    private void play3()
+    {
+        if (three == 0)
+        {
+            if (clickCounter == 1 || sPlay3 == "X")
+            {
+                sPlay3 = "O";
+                bGc = "blue";
+                counter = 1;
+                three = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 2 || sPlay3 == "O")
+            {
+                sPlay3 = "X";
+                three = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 3 || sPlay3 == "X")
+            {
+                sPlay3 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 4 || sPlay3 == "O")
+            {
+                sPlay3 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 5 || sPlay3 == "X")
+            {
+                sPlay3 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 6 || sPlay3 == "O")
+            {
+                sPlay3 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 7 || sPlay3 == "X")
+            {
+                sPlay3 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 8 || sPlay3 == "O")
+            {
+                sPlay3 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 9 || sPlay3 == "X")
+            {
+                sPlay3 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+        }
+    }
+    private void play4()
+    {
+        if (four == 0)
+        {
+            if (clickCounter == 1 || sPlay4 == "X")
+            {
+                sPlay4 = "O";
+                bGc = "blue";
+                counter = 1;
+                four = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 2 || sPlay4 == "O")
+            {
+                sPlay4 = "X";
+                four = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 3 || sPlay4 == "X")
+            {
+                sPlay4 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 4 || sPlay4 == "O")
+            {
+                sPlay4 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 5 || sPlay4 == "X")
+            {
+                sPlay4 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 6 || sPlay4 == "O")
+            {
+                sPlay4 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 7 || sPlay4 == "X")
+            {
+                sPlay4 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 8 || sPlay4 == "O")
+            {
+                sPlay4 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 9 || sPlay4 == "X")
+            {
+                sPlay4 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+        }
+    }
+    private void play5()
+    {
+        if (five == 0)
+        {
+            if (clickCounter == 1 || sPlay5 == "X")
+            {
+                sPlay5 = "O";
+                bGc = "blue";
+                counter = 1;
+                five = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 2 || sPlay5 == "O")
+            {
+                sPlay5 = "X";
+                five = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 3 || sPlay5 == "X")
+            {
+                sPlay5 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 4 || sPlay5 == "O")
+            {
+                sPlay5 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 5 || sPlay5 == "X")
+            {
+                sPlay5 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 6 || sPlay5 == "O")
+            {
+                sPlay5 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 7 || sPlay5 == "X")
+            {
+                sPlay5 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 8 || sPlay5 == "O")
+            {
+                sPlay5 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 9 || sPlay5 == "X")
+            {
+                sPlay5 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+        }
+    }
+    private void play6()
+    {
+        if (six == 0)
+        {
+            if (clickCounter == 1 || sPlay6 == "X")
+            {
+                sPlay6 = "O";
+                bGc = "blue";
+                counter = 1;
+                six = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 2 || sPlay6 == "O")
+            {
+                sPlay6 = "X";
+                six = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 3 || sPlay6 == "X")
+            {
+                sPlay6 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 4 || sPlay6 == "O")
+            {
+                sPlay6 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 5 || sPlay6 == "X")
+            {
+                sPlay6 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 6 || sPlay6 == "O")
+            {
+                sPlay6 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 7 || sPlay6 == "X")
+            {
+                sPlay6 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 8 || sPlay6 == "O")
+            {
+                sPlay6 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 9 || sPlay6 == "X")
+            {
+                sPlay6 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+
+        }
+    }
+    private void play7()
+    {
+        if (seven == 0)
+        {
+            if (clickCounter == 1 || sPlay7 == "X")
+            {
+                sPlay7 = "O";
+                bGc = "blue";
+                counter = 1;
+                seven = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 2 || sPlay7 == "O")
+            {
+                sPlay7 = "X";
+                seven = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 3 || sPlay7 == "X")
+            {
+                sPlay7 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 4 || sPlay7 == "O")
+            {
+                sPlay7 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 5 || sPlay7 == "X")
+            {
+                sPlay7 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 6 || sPlay7 == "O")
+            {
+                sPlay7 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 7 || sPlay7 == "X")
+            {
+                sPlay7 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 8 || sPlay7 == "O")
+            {
+                sPlay7 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 9 || sPlay7 == "X")
+            {
+                sPlay7 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+        }
+    }
+    private void play8()
+    {
+        if (eight == 0)
+        {
+            if (clickCounter == 1 || sPlay8 == "X")
+            {
+                sPlay8 = "O";
+                bGc = "blue";
+                counter = 1;
+                eight = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 2 || sPlay8 == "O")
+            {
+                sPlay8 = "X";
+                eight = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 3 || sPlay8 == "X")
+            {
+                sPlay8 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 4 || sPlay8 == "O")
+            {
+                sPlay8 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 5 || sPlay8 == "X")
+            {
+                sPlay8 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 6 || sPlay8 == "O")
+            {
+                sPlay8 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 7 || sPlay8 == "X")
+            {
+                sPlay8 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 8 || sPlay8 == "O")
+            {
+                sPlay8 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 9 || sPlay8 == "X")
+            {
+                sPlay8 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+        }
+    }
+    private void play9()
+    {
+        if (nine == 0)
+        {
+            if (clickCounter == 1 || sPlay9 == "X")
+            {
+                sPlay9 = "O";
+                bGc = "blue";
+                counter = 1;
+                nine = 1;
+                turn = "Go 'X'";
+
+            }
+            else if (clickCounter == 2 || sPlay9 == "O")
+            {
+                nine = 1;
+                sPlay9 = "X";
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 3 || sPlay9 == "X")
+            {
+                sPlay9 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 4 || sPlay9 == "O")
+            {
+                sPlay9 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 5 || sPlay9 == "X")
+            {
+                sPlay9 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 6 || sPlay9 == "O")
+            {
+                sPlay9 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 7 || sPlay9 == "X")
+            {
+                sPlay9 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+            else if (clickCounter == 8 || sPlay9 == "O")
+            {
+                sPlay9 = "X";
+                one = 1;
+                bGc = "red";
+                counter = 0;
+                turn = "Go 'O'";
+            }
+            else if (clickCounter == 9 || sPlay9 == "X")
+            {
+                sPlay9 = "O";
+                one = 1;
+                bGc = "blue";
+                counter = 1;
+                turn = "Go 'X'";
+            }
+        }
+    }
+
+    private void bChanger()
+    {
+        if (counter == 0)
+        {
+            counter = 1;
+            bGc = "red";
+            turn = "Go 'O'";
+        }
+        else if (counter == 1)
+        {
+            counter = 0;
+            bGc = "blue";
+            turn = "Go 'X'";
+        }
+        clickCounter++;
+        if (clickCounter == 9)
+        {
+            bGc = "wheat";
+            clickCounter = 0;
+            turn = "Start";
+            sCounter = 0;
+
+            counter = 0;
+            clickCounter = 0;
+            sPlay1 = " ";
+            sPlay2 = " ";
+            sPlay3 = " ";
+            sPlay4 = " ";
+            sPlay5 = " ";
+            sPlay6 = " ";
+            sPlay7 = " ";
+            sPlay8 = " ";
+            sPlay9 = " ";
+            one = 0;
+            two = 0;
+            three = 0;
+            four = 0;
+            five = 0;
+            six = 0;
+            seven = 0;
+            eight = 0;
+            nine = 0;
+
+        }
+    }
+
+}
