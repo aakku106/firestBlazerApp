@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "JY2GITWs5e3RbfN86uRk5HAU2NApz2MX0nUecXIGF0o=",
+  "Hash": "yPTdSYJhzXCyjouM5k13+QK6Y3Ao3kw8PZpasLa8OxY=",
   "Source": "first",
   "BasePath": "_content/first",
   "Mode": "Default",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.png"
+    },
+    {
+      "Identity": "/Users/aakku/Documents/blazor/first/wwwroot/wee.jpg",
+      "SourceId": "first",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/aakku/Documents/blazor/first/wwwroot/",
+      "BasePath": "_content/first",
+      "RelativePath": "wee.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/wee.jpg"
     }
   ]
 }

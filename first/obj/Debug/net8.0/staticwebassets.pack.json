@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets/favicon.png"
     },
     {
+      "Id": "/Users/aakku/Documents/blazor/first/wwwroot/wee.jpg",
+      "PackagePath": "staticwebassets/wee.jpg"
+    },
+    {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.first.props",
       "PackagePath": "build\\first.props"
     },

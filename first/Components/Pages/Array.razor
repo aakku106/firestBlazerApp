@@ -1,0 +1,30 @@
+@page "/array"
+@rendermode InteractiveServer
+
+<style>
+    body {
+        overflow: hidden;
+        background: url(wee.jpg);
+    }
+</style>
+<p role="status"> Counter=@counter</p>
+<ul class="container">Banana🍌
+    @foreach (var i in fruts)
+    {
+        <li class="container">@i</li>
+    }
+</ul>
+<button class="container" @onclick="counterPlus">weee </button>
+<br>
+@if (counter < fruts.Length)
+{
+    <p role="status"> @fruts[counter]</p>
+}
+@code {
+    string[] fruts = { "cat", "banana", "🍑", "🍏" };
+    int counter = 0;
+    private void counterPlus()
+    {
+        ++counter;
+    }
+}
