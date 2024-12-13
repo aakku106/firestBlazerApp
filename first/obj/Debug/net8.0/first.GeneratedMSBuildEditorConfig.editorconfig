@@ -42,6 +42,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9UaWN0YWsucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/aakku/Documents/blazor/first/Components/Pages/TikTakTok.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9UaWtUYWtUb2sucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/aakku/Documents/blazor/first/Components/Pages/Todo.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ub2RvLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 

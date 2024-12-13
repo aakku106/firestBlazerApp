@@ -1,0 +1,247 @@
+@page "/TikTakTok"
+@rendermode InteractiveServer
+
+<style>
+    :root {
+        --line: #00eb04;
+    }
+    body {
+        background: url(wee.jpg);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        transition: all 1s ease-in-out !important;
+    }
+
+    .holder {
+        height: 80vw;
+        padding-left: 17vw;
+        padding-top: 3vw;
+    }
+    .gameHolder {
+        height: 36vw;
+        width: 32vw;
+        position: fixed;
+        @* border: 3px solid red; *@
+        box-shadow: 0px 0px 3vw 0vw rgba(0, 254, 165, 0.238);
+        border-radius: 2vw;
+
+    }
+    .playingBoxes {
+        border: 3px solid transparent;
+        width: 12vw;
+        height: 12vw;
+        border-radius: 1vw;
+        background-color:
+    @BGC
+            !important;
+        font-weight: 900;
+        font-size: 4rem;
+        text-align: center;
+        padding-top: 2.2vw;
+        transition: all .3s ease-in-out !important;
+        &:hover {
+            cursor: pointer;
+            background-color: #3e6de422 !important;
+            width: 12.1vw;
+            height: 12.1vw;
+        }
+    }
+    .one,
+    .two,
+    .three {
+        display: flex;
+        gap: .2vw;
+
+        &:hover {
+            gap: .3vw;
+        }
+    }
+    .middle {
+        border: 3px solid transparent;
+        border-left-color: var(--line);
+        border-right-color: var(--line);
+    }
+    .mid {
+        border-top-color: var(--line);
+        border-bottom-color: var(--line);
+    }
+    .button {
+        position: fixed;
+        margin: 40vw -2vw;
+        width: 40vw;
+        height: 5vw;
+    }
+</style>
+<div class="holder">
+    <div class="gameHolder">
+        <div class="one">
+            <div class="playingBoxes " @onclick="clickRegisterOnClick"> @roundCrossHolder</div>
+            <div class="playingBoxes  middle" @onclick="clickRegisterOnClick"> @roundCrossHolder</div>
+            <div class="playingBoxes " @onclick="clickRegisterOnClick">@roundCrossHolder</div>
+        </div>
+        <div class="two">
+            <div class="playingBoxes mid" @onclick="clickRegisterOnClick">@roundCrossHolder</div>
+            <div class="playingBoxes mid middle" @onclick="clickRegisterOnClick">@roundCrossHolder</div>
+            <div class="playingBoxes mid" @onclick="clickRegisterOnClick">@roundCrossHolder</div>
+        </div>
+        <div class="three">
+            <div class="playingBoxes " @onclick="clickRegisterOnClick">@roundCrossHolder</div>
+            <div class="playingBoxes  middle" @onclick="clickRegisterOnClick">@roundCrossHolder</div>
+            <div class="playingBoxes " @onclick="clickRegisterOnClick">@roundCrossHolder</div>
+        </div>
+    </div>
+    <button class="  btn-info button" @onclick="turnHolderOnClick">@turn</button>
+</div>
+@code {
+    private int clickCounter = 0;
+    private string roundCrossHolder = " ";
+    bool roundClicked = false;
+    bool crossClicked = false;
+    bool isStartClicked = false;
+    int clickCounterOnBoxes = 0;
+    private void clickRegisterOnClick()
+    {
+        playingBoxesClickRegister();
+        backgroundChangerOnClick();
+        crossRoundSelectorOnClick();
+        clickCounter++;
+    }
+    private void playingBoxesClickRegister()
+    {
+        if (clickCounter == 0)
+        {
+            if (roundCrossHolder == "O")
+            {
+                roundClicked = true;
+            }
+            else if (roundCrossHolder == "X")
+            {
+                crossClicked = true;
+            }
+        }
+        if (clickCounter > 9)
+        {
+            BGC = "transparent";
+            roundCrossHolder = " ";
+            clickCounter = 0;
+        }
+    }
+    private string BGC = "transparent";
+    private void backgroundChangerOnClick()
+    {
+        clickCounterOnBoxes++;
+        if (clickCounterOnBoxes == 1)
+        {
+            BGC = "red";
+            turn = "Go 'O'";
+        }
+        else if (clickCounterOnBoxes == 2)
+        {
+            BGC = "blue";
+            turn = "Go 'X'";
+            roundCrossHolder = "O";
+        }
+        else if (clickCounterOnBoxes == 3)
+        {
+            BGC = "red";
+            turn = "Go 'O'";
+        }
+        else if (clickCounterOnBoxes == 4)
+        {
+            BGC = "blue";
+            turn = "Go 'X'";
+        }
+        else if (clickCounterOnBoxes == 5)
+        {
+            BGC = "red";
+            turn = "Go 'O'";
+        }
+        else if (clickCounterOnBoxes == 6)
+        {
+            BGC = "blue";
+            turn = "Go 'X'";
+        }
+        else if (clickCounterOnBoxes == 7)
+        {
+            turn = "Last chance for 'X'";
+            BGC = "red";
+        }
+        else if (clickCounterOnBoxes == 8)
+        {
+            turn = "Last chance for O";
+            BGC = "blue";
+        }
+        else if (clickCounterOnBoxes == 9)
+        {
+            turn = "Re-Start";
+            clickCounterOnBoxes = 0;
+            BGC = "transparent";
+            roundCrossHolder = " ";
+        }
+    }
+    private void crossRoundSelectorOnClick()
+    {
+        if (BGC == "red")
+        {
+            roundCrossHolder = "O";
+        }
+        else if (BGC == "blue")
+        {
+            roundCrossHolder = "X";
+        }
+    }
+    private string turn = "Start";
+    int buttonClickCounter = 0;
+    private void turnHolderOnClick()
+    {
+        @*  remove this condition for simplification *@
+        buttonClickCounter++;
+        if (buttonClickCounter == 1)
+        {
+            BGC = "red";
+            turn = "Go 'O'";
+        }
+        else if (buttonClickCounter == 2)
+        {
+            BGC = "blue";
+            turn = "Go 'X'";
+        }
+        else if (buttonClickCounter == 3)
+        {
+            BGC = "red";
+            turn = "Go 'O'";
+        }
+        else if (buttonClickCounter == 4)
+        {
+            BGC = "blue";
+            turn = "Go 'X'";
+        }
+        else if (buttonClickCounter == 5)
+        {
+            BGC = "red";
+            turn = "Go 'O'";
+        }
+        else if (buttonClickCounter == 6)
+        {
+            BGC = "blue";
+            turn = "Go 'X'";
+        }
+        else if (buttonClickCounter == 7)
+        {
+            turn = "Last chance for 'X'";
+            BGC = "red";
+        }
+        else if (buttonClickCounter == 8)
+        {
+            turn = "Last chance for O";
+            BGC = "blue";
+        }
+        else if (buttonClickCounter == 9)
+        {
+            turn = "Re-Start";
+            buttonClickCounter = 0;
+            BGC = "transparent";
+            roundCrossHolder = " ";
+        }
+    }
+}
