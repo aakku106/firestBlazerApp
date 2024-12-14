@@ -1,5 +1,5 @@
 is_global = true
-build_property.TargetFramework = net8.0
+build_property.TargetFramework = net7.0
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
@@ -12,7 +12,7 @@ build_property.RootNamespace = first
 build_property.ProjectDir = /Users/aakku/Documents/blazor/first/
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
-build_property.RazorLangVersion = 8.0
+build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
 build_property.MSBuildProjectDirectory = /Users/aakku/Documents/blazor/first
@@ -40,10 +40,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/aakku/Documents/blazor/first/Components/Pages/Home.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ib21lLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/aakku/Documents/blazor/first/Components/Pages/LineDrawing.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9MaW5lRHJhd2luZy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/aakku/Documents/blazor/first/Components/Pages/Tictak.razor]

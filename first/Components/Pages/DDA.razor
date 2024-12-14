@@ -1,0 +1,18 @@
+@page "/DDA"
+@inject IJSRuntime JSRuntime
+
+<canvas id="ddaCanvas" width="500" height="500" style="border:1px solid black;"></canvas>
+<button @onclick="DrawLine">Draw Line</button>
+
+@code {
+    private async Task DrawLine()
+    {
+        var startX = 50; // Starting x-coordinate
+        var startY = 50; // Starting y-coordinate
+        var endX = 300; // Ending x-coordinate
+        var endY = 200; // Ending y-coordinate
+
+        // Call the JavaScript function to draw the line
+        await JSRuntime.InvokeVoidAsync("drawLine", "ddaCanvas", startX, startY, endX, endY);
+    }
+}

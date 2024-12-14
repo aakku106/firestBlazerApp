@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "yPTdSYJhzXCyjouM5k13+QK6Y3Ao3kw8PZpasLa8OxY=",
+  "Hash": "Ciz0Vt8Mbxv38zSI439zouNSW7AjM4nYFdtlawqK3Lw=",
   "Source": "first",
   "BasePath": "_content/first",
   "Mode": "Default",
@@ -16,6 +16,25 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "/Users/aakku/.nuget/packages/blazor.extensions.canvas/1.1.1/staticwebassets/blazor.extensions.canvas.js",
+      "SourceId": "Blazor.Extensions.Canvas",
+      "SourceType": "Package",
+      "ContentRoot": "/Users/aakku/.nuget/packages/blazor.extensions.canvas/1.1.1/staticwebassets/",
+      "BasePath": "_content/Blazor.Extensions.Canvas",
+      "RelativePath": "blazor.extensions.canvas.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "/Users/aakku/.nuget/packages/blazor.extensions.canvas/1.1.1/staticwebassets/blazor.extensions.canvas.js"
+    },
     {
       "Identity": "/Users/aakku/Documents/blazor/first/obj/Debug/net8.0/scopedcss/bundle/first.styles.css",
       "SourceId": "first",
@@ -129,6 +148,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/favicon.png"
+    },
+    {
+      "Identity": "/Users/aakku/Documents/blazor/first/wwwroot/js/canvas.js",
+      "SourceId": "first",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/aakku/Documents/blazor/first/wwwroot/",
+      "BasePath": "_content/first",
+      "RelativePath": "js/canvas.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/canvas.js"
     },
     {
       "Identity": "/Users/aakku/Documents/blazor/first/wwwroot/wee.jpg",

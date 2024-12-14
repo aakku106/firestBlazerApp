@@ -1,0 +1,7 @@
+/Users/aakku/Documents/blazor/first/obj/Debug/net7.0/first.csproj.AssemblyReference.cache
+/Users/aakku/Documents/blazor/first/obj/Debug/net7.0/first.GeneratedMSBuildEditorConfig.editorconfig
+/Users/aakku/Documents/blazor/first/obj/Debug/net7.0/first.AssemblyInfoInputs.cache
+/Users/aakku/Documents/blazor/first/obj/Debug/net7.0/first.AssemblyInfo.cs
+/Users/aakku/Documents/blazor/first/obj/Debug/net7.0/first.csproj.CoreCompileInputs.cache
+/Users/aakku/Documents/blazor/first/obj/Debug/net7.0/first.MvcApplicationPartsAssemblyInfo.cache
+/Users/aakku/Documents/blazor/first/obj/Debug/net7.0/first.sourcelink.json
