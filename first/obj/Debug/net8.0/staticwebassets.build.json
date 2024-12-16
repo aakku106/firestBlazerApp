@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Ciz0Vt8Mbxv38zSI439zouNSW7AjM4nYFdtlawqK3Lw=",
+  "Hash": "NyI0ZaKmVmpEHOE+nQhV+XQCU/yNVpRupovipAqKiJ0=",
   "Source": "first",
   "BasePath": "_content/first",
   "Mode": "Default",
@@ -167,6 +167,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/canvas.js"
+    },
+    {
+      "Identity": "/Users/aakku/Documents/blazor/first/wwwroot/js/lineDrawingAlgo.js",
+      "SourceId": "first",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/aakku/Documents/blazor/first/wwwroot/",
+      "BasePath": "_content/first",
+      "RelativePath": "js/lineDrawingAlgo.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/js/lineDrawingAlgo.js"
     },
     {
       "Identity": "/Users/aakku/Documents/blazor/first/wwwroot/wee.jpg",

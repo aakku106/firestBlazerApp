@@ -25,6 +25,10 @@
       "PackagePath": "staticwebassets/js/canvas.js"
     },
     {
+      "Id": "/Users/aakku/Documents/blazor/first/wwwroot/js/lineDrawingAlgo.js",
+      "PackagePath": "staticwebassets/js/lineDrawingAlgo.js"
+    },
+    {
       "Id": "/Users/aakku/Documents/blazor/first/wwwroot/wee.jpg",
       "PackagePath": "staticwebassets/wee.jpg"
     },
