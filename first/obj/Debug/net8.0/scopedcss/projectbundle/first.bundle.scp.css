@@ -166,7 +166,7 @@ main[b-ioq7fijvyn] {
   padding-bottom: 1rem;
 }
 
-.nav-item[b-dnmt1yt62a]  .nav-link {
+.nav-item[b-dnmt1yt62a] .nav-link {
   color: #d7d7d7;
   background: none;
   border: none;
@@ -178,12 +178,12 @@ main[b-ioq7fijvyn] {
   width: 100%;
 }
 
-.nav-item[b-dnmt1yt62a]  a.active {
+.nav-item[b-dnmt1yt62a] a.active {
   background-color: rgba(255, 255, 255, 0.37);
   color: white;
 }
 
-.nav-item[b-dnmt1yt62a]  .nav-link:hover {
+.nav-item[b-dnmt1yt62a] .nav-link:hover {
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
 }

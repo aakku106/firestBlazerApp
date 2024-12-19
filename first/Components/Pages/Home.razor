@@ -1,8 +1,76 @@
 ﻿@page "/"
+@rendermode InteractiveServer
 <PageTitle>Home</PageTitle>
 
 <h1>Hello, world!</h1>
 
 Welcome to your new app.
 
-<input type="text" name="" id="" >
+<style>
+    body {
+        transition: all .7s ease-in-out;
+        background-color:
+    @BGC
+            !important;
+
+        color: @TC !important;
+    }
+</style>
+
+<input type="text" name="" id="" @onchange="wee">
+<button @onclick="clear">clear</button>
+<button @onclick="()=> text = string.Empty">clearWa</button>
+
+<p class="clearButon">@text</p>
+@code
+{
+    string text = "Ccn";
+
+    void wee(ChangeEventArgs w)
+    {
+        text = w.Value.ToString();
+    }
+    void clear()
+    {
+        text = string.Empty;
+    }
+
+}
+
+
+
+
+<br><br>
+
+
+<form>
+    <h1>Choose background Color </h1>
+    <label for="">red</label>
+    <input type="radio" @onclick="red"><br>
+    <label for="green">Green</label>
+    <input type="radio" @onclick="green"><br>
+    <label for="black">Black</label>
+    <input type="radio" @onclick="black"><br>
+</form>
+@code {
+
+    string BGC = "white";
+    string TC = "black";
+    private void red()
+    {
+        BGC = "red";
+        TC = "blue";
+    }
+    private void green()
+    {
+        BGC = "green";
+        TC = "red";
+
+    }
+    private void black()
+    {
+        BGC = "black";
+        TC = "white";
+
+    }
+}

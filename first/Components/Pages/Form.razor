@@ -1,0 +1,99 @@
+@page "/Form"
+@rendermode InteractiveServer
+
+<style>
+    body {
+        transition: all .7s ease-in-out;
+        background-color:
+    @BGC
+            !important;
+        color: @TC !important;
+    }
+
+    .gapI {
+        margin-left: 20vw;
+        margin-bottom: 10vw;
+        display: flex;
+        flex-direction: column;
+        width: 20vw;
+        border-radius: 10vw;
+        gap: 10px;
+        text-align: center;
+        transition: all 1s ease-in-out;
+    }
+
+    .gapII {
+        text-align: center;
+        transition: all 1s ease-in-out;
+        border-radius: 10vw;
+        border: none;
+        padding: .5vw;
+    }
+
+    .holdShow {
+        columns: 2;
+        row-gap: 10vw !important;
+        transition: all 1s ease-in-out;
+    }
+
+    .show {
+        padding: 1.2vw;
+        background-color: #3f3a3a;
+        border-radius: 10vw;
+        margin: 3vw;
+        display: flex;
+        justify-content: space-between;
+        transition: all 1s ease-in-out;
+    }
+
+    .clear {
+        border-radius: 10vw;
+        padding: .7vw;
+        transition: all 1s ease-in-out;
+    }
+
+    .textAlign {
+        border-radius: 10vw;
+        text-align: center;
+        background-color: #ffffff3f;
+        padding: .7vw;
+        transition: all 1s ease-in-out;
+    }
+
+    .wiDh {
+        width: 25vw;
+        margin-left: -2vw;
+    }
+</style>
+
+<h1>TODO</h1>
+<form class="gapI">
+    <label class="gapII" for="">Enter work TODO do: </label>
+    <input class="gapII" type="text" @bind="addTodoList">
+    <button class="btn-primary gapII wiDh" @onclick="enter">Enter</button>
+</form>
+<ul class="holdShow">
+    @foreach (string i in names)
+    {
+        <li class="show">
+            <span class="textAlign">@i</span>
+            <button class="clear btn-danger" @onclick="clear">clear</button>
+        </li>
+    }
+</ul>
+
+@code {
+    string BGC = "black";
+    string TC = "white";
+    static string addTodoList = "😘";
+    static List<string> names = new List<string>() { "eat", "sleep", "WatchAnime", addTodoList };
+    void enter()
+    {
+        names.Add(addTodoList);
+        addTodoList = "😍";
+    }
+    void clear()
+    {
+        names.Clear();
+    }
+}
