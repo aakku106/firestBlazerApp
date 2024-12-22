@@ -64,36 +64,46 @@
         width: 25vw;
         margin-left: -2vw;
     }
+
+    .selectI {}
 </style>
 
-<h1>TODO</h1>
+<h1>TODO @counter</h1>
 <form class="gapI">
     <label class="gapII" for="">Enter work TODO do: </label>
     <input class="gapII" type="text" @bind="addTodoList">
     <button class="btn-primary gapII wiDh" @onclick="enter">Enter</button>
 </form>
+@* <button class="clear btn-danger" @onclick="clear">clear</button> *@
 <ul class="holdShow">
     @foreach (string i in names)
     {
         <li class="show">
             <span class="textAlign">@i</span>
-            <button class="clear btn-danger" @onclick="clear">clear</button>
+            @* <button class="clear btn-danger" @onclick="clear">clear</button> *@
+            <button class="clear btn-danger" @onclick="()=>clear(i)">clear</button>
+            @* <input class="selectI" type="checkbox"> *@
         </li>
     }
 </ul>
+
 
 @code {
     string BGC = "black";
     string TC = "white";
     static string addTodoList = "😘";
-    static List<string> names = new List<string>() { "eat", "sleep", "WatchAnime", addTodoList };
+    static List<string> names = new List<string>() { };
+    @* private List<Todo> *@
+    int counter = 0;
     void enter()
     {
         names.Add(addTodoList);
         addTodoList = "😍";
+        counter += 1;
     }
-    void clear()
+    void clear(string addTodoList)
     {
-        names.Clear();
+        @* string i = string.Empty; *@
+        names.Remove(addTodoList);
     }
 }
