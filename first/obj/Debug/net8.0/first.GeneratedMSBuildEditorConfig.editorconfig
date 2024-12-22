@@ -62,6 +62,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9UaWtUYWtUb2sucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/aakku/Documents/blazor/first/Components/Pages/Todolist.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9Ub2RvbGlzdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/aakku/Documents/blazor/first/Components/Pages/Weather.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50cy9QYWdlcy9XZWF0aGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
