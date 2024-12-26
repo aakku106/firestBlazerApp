@@ -16,17 +16,21 @@
 <form action="" class="formI">
     <label for="">😈 Enter work TODO do 😈</label <br>
     <input type="text" @bind="input">
-    <button>Summit</button>
+    <button @onclick="list">Summit</button>
 </form>
 <ul>
     @foreach (var i in todoItem)
     {
-        <li>@input</li>
+        <li>@i </li>
 
     }
 </ul>
 
 @code {
     static string input = "";
-    private List<Todolist> todoItem = new List<Todolist>();
+    private List<TodoList> todoItem = new List<TodoList>();
+    private void list()
+    {
+        @* todoItem.Add(TodoList.input); *@
+    }
 }

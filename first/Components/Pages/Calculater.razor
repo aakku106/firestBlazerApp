@@ -3,59 +3,230 @@
 
 <style>
     body {
-        background-color: #0d73bc;
+        background-color: @BGC !important;
+        transition: all .5s ease-in-out;
+                        transition: all .5s ease-in-out !important;
+        background: url(@BGC)
+
     }
 
     .center {
+        display: @display;
+        @* display: flex; *@
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         background-color: #06296d;
         margin: auto;
-        width: 33vw;
+        width: 35vw;
         height: 50vw;
         border-radius: 5vw;
-        padding: 5vw;
+        padding: 1vw;
+        @* border: 2px solid red; *@
+        position: relative;
+                transition: all .5s ease-in-out;
+
     }
 
     .display {
-        background-color: #fff;
+        background-color: #eb8ad6;
         width: 30vw;
-        height: 12vw;
-        margin: -3.6vw;
+        height: 10vw;
         border-radius: 3vw;
-        padding: 5vw;
+        @* border: 2px solid rgb(0, 255, 0); *@
+        padding: 1vw;
+        display: flex;
+        font-size: 3.7vw;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: end;
+        margin-top: .7vw !important;
+        margin-bottom: 1.7vw;
+        filter: drop-shadow(0px 0px 7px  #de9dd7) blur(.7px);
+        transition: all .5s ease-in-out;
+        user-select: none;
+
+        .input {
+            width: 100%;
+            height: 50%;
+            padding: 1vw;
+            @* border: 2px solid rgb(0, 255, 0); *@
+            border-radius: 3vw;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            @* background-color: #ed80d6; *@
+                    transition: all .5s ease-in-out;
+
+        }
+        .result {
+            @* width: 100%; *@
+            height: 50%;
+            padding: 1vw;
+            @* border: 2px solid rgb(255, 0, 195); *@
+            border-radius: 3vw;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            background-color: #ed80d6;
+                    transition: all .5s ease-in-out;
+
+        }
     }
 
-    .keyHolders {
+    .keyHolder {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
         background-color: #9d4bd3;
-        width: 300vw !important;
-        height: 300vw !important;
+        width: 30vw;
+        height: 80vw;
+        border-radius: 5vw;
+        padding: 2vw 2vw;
+        @* border: 2px solid rgb(251, 255, 0); *@
+                transition: all .5s ease-in-out;
+
     }
+
+    .row {
+        display: flex;
+        justify-content: space-around;
+        @* width: 100%; *@
+        height: 20%;
+        flex-direction: row;
+                transition: all .5s ease-in-out;
+
+    }
+
+
+    .keys {
+        background-color: #fff;
+        width: 5vw;
+        height: 5vw;
+        border-radius: 2vw;
+        font-size: 2vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        user-select: none;
+
+        &:hover{
+            background-color: #d994dd;
+                transition: all .3s ease-in-out;
+
+        }
+        &:active{
+            background-color: #b6135ca8;
+            color: chartreuse;    
+            transition: all .1s ease-in-out;
+
+        }
+    }
+    .boom{
+        
+        display: none;
+        }
+
 </style>
 
 
-<h1><u>Calculater</u></h1>
+<h1><u>CALCULATOR</u></h1>
+
 <div class="center">
 
-    <div class="display">cat</div>
+    <div class="display">
+        <section class="input">@currentInput</section>
+        <section class="result">@currentResult</section>
+    </div>
+
     <div class="keyHolder">
-        <div class="keys"></div>
-        <div class="keys"></div>
-        <div class="keys"></div>
-        <div class="keys"></div>
-        <div class="keys"></div>
-        <div class="keys"></div>
-        <div class="keys"></div>
-        <div class="keys"></div>
-        <div class="keys"></div>
-        <div class="keys"></div>
-        <div class="keys"></div>
-        <div class="keys"></div>
-        <div class="keys"></div>
-        <div class="keys"></div>
-        <div class="keys"></div>
-        <div class="keys"></div>
-        <div class="keys"></div>
-        <div class="keys"></div>
-        <div class="keys"></div>
-        <div class="keys"></div>
+        <div class="row">
+            <div class="keys"@onclick="clearInput">C</div>
+            <div class="keys"@onclick="del" >del</div>
+            <div class="boom">@text</div>
+            <div class="keys"@onclick="() => input('%')" >MOD</div>
+            <div class="keys"@onclick="() => input('/')" >DIV</div>
+        </div>
+        <div class="row">
+            <div class="keys"@onclick="() => input('7')" >7</div>
+            <div class="keys"@onclick="() => input('8')" >8</div>
+            <div class="keys"@onclick="() => input('9')" >9</div>
+            <div class="keys"@onclick="() => input('*')" >X</div>
+        </div>
+        <div class="row">
+            <div class="keys"@onclick="() => input('4')" >4</div>
+            <div class="keys"@onclick="() => input('5')" >5</div>
+            <div class="keys"@onclick="() => input('6')" >6</div>
+            <div class="keys"@onclick="() => input('-')" >-</div>
+        </div>
+        <div class="row">
+            <div class="keys" @onclick="() => input('1')" >1</div>
+            <div class="keys" @onclick="() => input('2')" >2</div>
+            <div class="keys" @onclick="() => input('3')" >3</div>
+            <div class="keys" @onclick="() => input('+')" >+</div>
+        </div>
+        <div class="row">
+            <div class="keys"@onclick="appleLogo"></div>
+            <div class="keys"@onclick="() => input('0')">0</div>
+            <div class="keys"@onclick="() => input('.')">.</div>
+            <div class="keys"@onclick="calc">=</div>
+        </div>
+
     </div>
 </div>
+
+
+
+@code{
+float one=1;
+float two=2;
+string currentInput{get;set;} = ""; // User input
+string currentResult = "0"; //  display result
+
+void input(char value){
+    currentInput += value; // Append the clicked value to the input
+
+}
+void clearInput(){
+    currentInput="";
+    currentResult="0";
+}
+void del(){
+    if(currentInput.Length>0){
+        currentInput=currentInput.Remove(currentInput.Length-1);
+    }
+}
+    private float add(float a, float b){
+        return a+b;
+    }
+     private float sub(float a, float b){
+        return a-b;
+    }
+     private float mul(float a, float b){
+        return a*b;
+    }
+     private float div(float a, float b){
+        return a/b;
+    }
+     private float mod(float a, float b){
+        return a%b;
+    }
+    string BGC="#0d73bc";
+    string text="BooM";
+    private string display="flex";
+void calc(){
+
+    if(currentInput=="+"){
+        float result= add(1,2);
+        currentResult= result.ToString();
+    }
+
+
+}
+    private void appleLogo(){
+        display="none";
+        BGC="https://i.pinimg.com/236x/42/8a/ca/428aca1ff498057858dd6baf8a4d82e9.jpg";
+    }
+
+}

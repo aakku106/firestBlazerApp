@@ -32,3 +32,4 @@
 /Users/aakku/Documents/blazor/first/obj/Debug/net8.0/first.pdb
 /Users/aakku/Documents/blazor/first/obj/Debug/net8.0/first.genruntimeconfig.cache
 /Users/aakku/Documents/blazor/first/obj/Debug/net8.0/ref/first.dll
+/Users/aakku/Documents/blazor/first/obj/Debug/net8.0/scopedcss/Components/Pages/Calculater.razor.rz.scp.css
