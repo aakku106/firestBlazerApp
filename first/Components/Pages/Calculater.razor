@@ -5,7 +5,6 @@
     body {
         background-color: @BGC !important;
         transition: all .5s ease-in-out;
-                        transition: all .5s ease-in-out !important;
         background: url(@BGC)
     }
 
@@ -20,10 +19,8 @@
         height: 50vw;
         border-radius: 5vw;
         padding: 1vw;
-        @* border: 2px solid red; *@
         position: relative;
-                transition: all .5s ease-in-out;
-
+        transition: all .5s ease-in-out;
     }
 
     .display {
@@ -31,7 +28,6 @@
         width: 30vw;
         height: 10vw;
         border-radius: 3vw;
-        @* border: 2px solid rgb(0, 255, 0); *@
         padding: 1vw;
         display: flex;
         font-size: 3.7vw;
@@ -48,27 +44,21 @@
             width: 100%;
             height: 50%;
             padding: 1vw;
-            @* border: 2px solid rgb(0, 255, 0); *@
             border-radius: 3vw;
             display: flex;
             justify-content: right;
             align-items: center;
-            @* background-color: #ed80d6; *@
-                    transition: all .5s ease-in-out;
-
+            transition: all .5s ease-in-out;
         }
         .result {
-            @* width: 100%; *@
             height: 50%;
             padding: 1vw;
-            @* border: 2px solid rgb(255, 0, 195); *@
             border-radius: 3vw;
             display: flex;
             justify-content: right;
             align-items: center;
             background-color: #ed80d6;
-                    transition: all .5s ease-in-out;
-
+            transition: all .5s ease-in-out;
         }
     }
 
@@ -81,21 +71,16 @@
         height: 80vw;
         border-radius: 5vw;
         padding: 2vw 2vw;
-        @* border: 2px solid rgb(251, 255, 0); *@
-                transition: all .5s ease-in-out;
-
+        transition: all .5s ease-in-out;
     }
 
     .row {
         display: flex;
         justify-content: space-around;
-        @* width: 100%; *@
         height: 20%;
         flex-direction: row;
-                transition: all .5s ease-in-out;
-
+        transition: all .5s ease-in-out;
     }
-
 
     .keys {
         background-color: #fff;
@@ -111,28 +96,22 @@
 
         &:hover{
             background-color: #d994dd;
-                transition: all .3s ease-in-out;
-
+            transition: all .3s ease-in-out;
         }
         &:active{
             background-color: #b6135ca8;
             color: chartreuse;    
             transition: all .1s ease-in-out;
-
         }
     }
     .boom{
-        
         display: none;
-        }
-
+    }
 </style>
-
 
 <h1><u>CALCULATOR</u></h1>
 
 <div class="center">
-
     <div class="display">
         <section class="input">@currentInput</section>
         <section class="result">@currentResult</section>
@@ -140,132 +119,186 @@
 
     <div class="keyHolder">
         <div class="row">
-            <div class="keys"@onclick="clearInput">C</div>
-            <div class="keys"@onclick="del" >del</div>
+            <div class="keys" @onclick="clearInput">C</div>
+            <div class="keys" @onclick="del">del</div>
             <div class="boom">@text</div>
-            <div class="keys"@onclick="() => input('%')" >MOD</div>
-            <div class="keys"@onclick="() => input('/')" >DIV</div>
+            <div class="keys" @onclick="() => input('%')">MOD</div>
+            <div class="keys" @onclick="() => input('/')">DIV</div>
         </div>
         <div class="row">
-            <div class="keys"@onclick="() => input('7')" >7</div>
-            <div class="keys"@onclick="() => input('8')" >8</div>
-            <div class="keys"@onclick="() => input('9')" >9</div>
-            <div class="keys"@onclick="() => input('*')" >X</div>
+            <div class="keys" @onclick="() => input('7')">7</div>
+            <div class="keys" @onclick="() => input('8')">8</div>
+            <div class="keys" @onclick="() => input('9')">9</div>
+            <div class="keys" @onclick="() => input('*')">X</div>
         </div>
         <div class="row">
-            <div class="keys"@onclick="() => input('4')" >4</div>
-            <div class="keys"@onclick="() => input('5')" >5</div>
-            <div class="keys"@onclick="() => input('6')" >6</div>
-            <div class="keys"@onclick="() => input('-')" >-</div>
+            <div class="keys" @onclick="() => input('4')">4</div>
+            <div class="keys" @onclick="() => input('5')">5</div>
+            <div class="keys" @onclick="() => input('6')">6</div>
+            <div class="keys" @onclick="() => input('-')">-</div>
         </div>
         <div class="row">
-            <div class="keys" @onclick="() => input('1')" >1</div>
-            <div class="keys" @onclick="() => input('2')" >2</div>
-            <div class="keys" @onclick="() => input('3')" >3</div>
-            <div class="keys" @onclick="() => input('+')" >+</div>
+            <div class="keys" @onclick="() => input('1')">1</div>
+            <div class="keys" @onclick="() => input('2')">2</div>
+            <div class="keys" @onclick="() => input('3')">3</div>
+            <div class="keys" @onclick="() => input('+')">+</div>
         </div>
         <div class="row">
-            <div class="keys"@onclick="appleLogo"></div>
-            <div class="keys"@onclick="() => input('0')">0</div>
-            <div class="keys"@onclick="() => input('.')">.</div>
-            <div class="keys"@onclick="calc">=</div>
+            <div class="keys" @onclick="appleLogo"></div>
+            <div class="keys" @onclick="() => input('0')">0</div>
+            <div class="keys" @onclick="() => input('.')">.</div>
+            <div class="keys" @onclick="calc">=</div>
         </div>
-
     </div>
 </div>
 
+@code {
+    string currentInput { get; set; } = ""; // User input
+    string currentResult = "0"; // display result
+    string BGC = "#0d73bc";
+    string text = "BooM";
+    private string display = "flex";
 
-
-@code{
-
-string currentInput{get;set;} = ""; // User input
-string currentResult = "0"; //  display result
-string BGC="#0d73bc";
-string text="BooM";
-private string display="flex";
-
-void input(char value){
-    currentInput += value; // add to display
-}
-void clearInput(){
-    currentInput="";
-    currentResult="0";
-}
-void del(){
-    if(currentInput.Length>0){
-        currentInput=currentInput.Remove(currentInput.Length-1);
-    }
-}
-    private float add(float a, float b){
-        return a+b;
-    }
-     private float sub(float a, float b){
-        return a-b;
-    }
-     private float mul(float a, float b){
-        return a*b;
-    }
-     private float div(float a, float b){
-        return a/b;
-    }
-     private float mod(float a, float b){
-        return a%b;
-    }
-  
-void calc() {
-        currentResult = aakkusAlgorithm(currentInput);
+    void input(char value) {
+        currentInput += value; // add to display
     }
 
+    void clearInput() {
+        currentInput = "";
+        currentResult = "0";
+    }
 
-private string aakkusAlgorithm(string input) {
-        List<string> operators = new List<string> { "+", "-", "*", "/", "%" };
-        List<float> numbers = new List<float>();
-        List<string> symbols = new List<string>();
+    void del() {
+        if (currentInput.Length > 0) {
+            currentInput = currentInput.Remove(currentInput.Length - 1);
+        }
+    }
 
-        // Breaking input into numbers and operators
-        string tempNumber = "";
-        foreach (var ch in input) {
-            if (char.IsDigit(ch) || ch == '.') {
-                tempNumber += ch; // Add digit to tempNumber
-            } else if (operators.Contains(ch.ToString())) {
-                if (!string.IsNullOrEmpty(tempNumber)) {
-                    numbers.Add(float.Parse(tempNumber)); // Add current number to list
-                    tempNumber = "";
+    private float add(float a, float b) {
+        return a + b;
+    }
+
+    private float sub(float a, float b) {
+        return a - b;
+    }
+
+    private float mul(float a, float b) {
+        return a * b;
+    }
+
+    private float div(float a, float b) {
+        return a / b;
+    }
+
+    private float mod(float a, float b) {
+        return a % b;
+    }
+
+    void calc() {
+        if (currentInput.Length == 0) {
+            currentResult = "0";
+            return;
+        }
+
+        try {
+            currentResult = aakkusAlgorithm(currentInput).ToString();
+        }
+        catch (Exception ex) {
+            currentResult = $"Error: {ex.Message}";
+        }
+    }
+
+    private float aakkusAlgorithm(string input) {
+        // Tokens list for numbers and operators
+        List<string> tokens = Tokenize(input);
+        Queue<string> outputQueue = new Queue<string>();
+        Stack<string> operatorStack = new Stack<string>();
+
+        // Operator precedence
+        Dictionary<string, int> precedence = new Dictionary<string, int>() {
+            { "+", 1 },
+            { "-", 1 },
+            { "*", 2 },
+            { "/", 2 },
+            { "%", 2 }
+        };
+
+        foreach (string token in tokens) {
+            if (IsNumber(token)) {
+                outputQueue.Enqueue(token);
+            } else if (token == "(") {
+                operatorStack.Push(token);
+            } else if (token == ")") {
+                while (operatorStack.Count > 0 && operatorStack.Peek() != "(") {
+                    outputQueue.Enqueue(operatorStack.Pop());
                 }
-                symbols.Add(ch.ToString()); // Add operator
-            }
-        }
-        if (!string.IsNullOrEmpty(tempNumber)) {
-            numbers.Add(float.Parse(tempNumber)); // Add last number
-        }
-
-        // Now calculate based on operator precedence
-        float result = numbers[0];
-        for (int i = 0; i < symbols.Count; i++) {
-            string op = symbols[i];
-            float nextNum = numbers[i + 1];
-
-            // Perform operations based on precedence
-            if (op == "+") {
-                result = add(result, nextNum);
-            } else if (op == "-") {
-                result = sub(result, nextNum);
-            } else if (op == "*") {
-                result = mul(result, nextNum);
-            } else if (op == "/") {
-                result = div(result, nextNum);
-            } else if (op == "%") {
-                result = mod(result, nextNum);
+                operatorStack.Pop(); // Pop the "("
+            } else { // It's an operator (+, -, *, /, %)
+                while (operatorStack.Count > 0 && precedence[operatorStack.Peek()] >= precedence[token]) {
+                    outputQueue.Enqueue(operatorStack.Pop());
+                }
+                operatorStack.Push(token);
             }
         }
 
-        return result.ToString(); // Return the result as string
+        // Pop all remaining operators
+        while (operatorStack.Count > 0) {
+            outputQueue.Enqueue(operatorStack.Pop());
+        }
+
+        // Evaluate the expression in Reverse Polish Notation (RPN)
+        Stack<float> evaluationStack = new Stack<float>();
+        foreach (string token in outputQueue) {
+            if (IsNumber(token)) {
+                evaluationStack.Push(float.Parse(token));
+            } else {
+                float b = evaluationStack.Pop();
+                float a = evaluationStack.Pop();
+                float result = token switch {
+                    "+" => add(a, b),
+                    "-" => sub(a, b),
+                    "*" => mul(a, b),
+                    "/" => div(a, b),
+                    "%" => mod(a, b),
+                    _ => 0
+                };
+                evaluationStack.Push(result);
+            }
+        }
+
+        return evaluationStack.Pop(); // Final result
+    }
+
+    // Helper method to tokenize the input
+    private List<string> Tokenize(string input) {
+        List<string> tokens = new List<string>();
+        string num = "";
+
+        foreach (char ch in input) {
+            if (Char.IsDigit(ch) || ch == '.') {
+                num += ch; // Accumulate digits
+            } else {
+                if (num.Length > 0) {
+                    tokens.Add(num);
+                    num = ""; // Reset num after adding it
+                }
+                tokens.Add(ch.ToString()); // Add operator or parenthesis
+            }
+        }
+
+        if (num.Length > 0) {
+            tokens.Add(num); // Add the last number if exists
+        }
+
+        return tokens;
+    }
+
+    private bool IsNumber(string token) {
+        return float.TryParse(token, out _);
     }
 
     private void appleLogo() {
         display = "none";
         BGC = "https://www.chromethemer.com/download/hd-wallpapers/itachi-uchiha-3840x2160.jpg";
     }
-}
-
 }
