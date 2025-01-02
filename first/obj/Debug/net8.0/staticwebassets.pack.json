@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "/Users/aakku/Documents/blazor/first/obj/Debug/net8.0/scopedcss/projectbundle/first.bundle.scp.css",
-      "PackagePath": "staticwebassets/first.bundle.scp.css"
+      "PackagePath": "staticwebassets/first.nb180b3f1c.bundle.scp.css"
     },
     {
       "Id": "/Users/aakku/Documents/blazor/first/wwwroot/app.css",
@@ -43,6 +43,10 @@
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.first.props",
       "PackagePath": "buildTransitive\\first.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.first.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj/Debug/net8.0/staticwebassets/msbuild.first.Microsoft.AspNetCore.StaticWebAssets.props",
