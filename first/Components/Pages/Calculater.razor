@@ -177,13 +177,15 @@
 
 
 @code{
-float one=1;
-float two=2;
+
 string currentInput{get;set;} = ""; // User input
 string currentResult = "0"; //  display result
+string BGC="#0d73bc";
+string text="BooM";
+private string display="flex";
 
 void input(char value){
-    currentInput += value;
+    currentInput += value; // add to display
 }
 void clearInput(){
     currentInput="";
@@ -209,21 +211,61 @@ void del(){
      private float mod(float a, float b){
         return a%b;
     }
-    string BGC="#0d73bc";
-    string text="BooM";
-    private string display="flex";
-void calc(){
-
-    if(currentInput=="+"){
-        float result= add(1,2);
-        currentResult= result.ToString();
+  
+void calc() {
+        currentResult = aakkusAlgorithm(currentInput);
     }
 
 
+private string aakkusAlgorithm(string input) {
+        List<string> operators = new List<string> { "+", "-", "*", "/", "%" };
+        List<float> numbers = new List<float>();
+        List<string> symbols = new List<string>();
+
+        // Breaking input into numbers and operators
+        string tempNumber = "";
+        foreach (var ch in input) {
+            if (char.IsDigit(ch) || ch == '.') {
+                tempNumber += ch; // Add digit to tempNumber
+            } else if (operators.Contains(ch.ToString())) {
+                if (!string.IsNullOrEmpty(tempNumber)) {
+                    numbers.Add(float.Parse(tempNumber)); // Add current number to list
+                    tempNumber = "";
+                }
+                symbols.Add(ch.ToString()); // Add operator
+            }
+        }
+        if (!string.IsNullOrEmpty(tempNumber)) {
+            numbers.Add(float.Parse(tempNumber)); // Add last number
+        }
+
+        // Now calculate based on operator precedence
+        float result = numbers[0];
+        for (int i = 0; i < symbols.Count; i++) {
+            string op = symbols[i];
+            float nextNum = numbers[i + 1];
+
+            // Perform operations based on precedence
+            if (op == "+") {
+                result = add(result, nextNum);
+            } else if (op == "-") {
+                result = sub(result, nextNum);
+            } else if (op == "*") {
+                result = mul(result, nextNum);
+            } else if (op == "/") {
+                result = div(result, nextNum);
+            } else if (op == "%") {
+                result = mod(result, nextNum);
+            }
+        }
+
+        return result.ToString(); // Return the result as string
+    }
+
+    private void appleLogo() {
+        display = "none";
+        BGC = "https://www.chromethemer.com/download/hd-wallpapers/itachi-uchiha-3840x2160.jpg";
+    }
 }
-    private void appleLogo(){
-        display="none";
-        BGC="https://www.chromethemer.com/download/hd-wallpapers/itachi-uchiha-3840x2160.jpg";
-    }
 
 }
