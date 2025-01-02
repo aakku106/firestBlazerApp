@@ -11,7 +11,6 @@
 
     .center {
         display: @display;
-        @* display: flex; *@
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -184,8 +183,7 @@ string currentInput{get;set;} = ""; // User input
 string currentResult = "0"; //  display result
 
 void input(char value){
-    currentInput += value; // Append the clicked value to the input
-
+    currentInput += value;
 }
 void clearInput(){
     currentInput="";
@@ -225,7 +223,7 @@ void calc(){
 }
     private void appleLogo(){
         display="none";
-        BGC="https://i.pinimg.com/236x/42/8a/ca/428aca1ff498057858dd6baf8a4d82e9.jpg";
+        BGC="https://www.chromethemer.com/download/hd-wallpapers/itachi-uchiha-3840x2160.jpg";
     }
 
 }
